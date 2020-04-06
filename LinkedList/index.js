@@ -59,10 +59,27 @@ class LinkedList {
         //找到要刪除的index, 把上一個next指向現在的next
         previous.next = current.next;
         this.size--;
+        return current.item;
       }
     } else {
       return false; //無法執行
     }
+  }
+  indexOf(item) {
+    let listIdx = 0;
+    let current = this.head;
+    while (current) {
+      if (current.item === item) {
+        return listIdx;
+      }
+      current = current.next;
+      listIdx++;
+    }
+    return -1;
+  }
+  removeItem(item) {
+    const removeIndex = this.indexOf(item);
+    return this.removeAt(removeIndex);
   }
 }
 
@@ -79,4 +96,9 @@ List.append(2);
 List.append(3);
 List.insert(1, 6);
 List.removeAt(1);
+
+// console.log(List.indexOf(0));
+console.log(List.indexOf(0));
+console.log(List.removeItem(2));
+
 console.log(List);
