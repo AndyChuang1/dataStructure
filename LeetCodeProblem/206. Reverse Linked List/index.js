@@ -20,11 +20,11 @@ function reverseList(head) {
   let temp;
   let prev = null;
 
-  while (!current) {
+  while (current) {
     temp = current;
     current = current.next;
     temp.next = prev;
-    prev.temp;
+    prev = temp;
   }
   return prev;
 }
