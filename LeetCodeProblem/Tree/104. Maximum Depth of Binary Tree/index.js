@@ -25,3 +25,9 @@ var maxDepth = function (root) {
   }
   return max;
 };
+
+//Depth-First Search Recursive
+var maxDepthRecursive = function (root) {
+  if (!root) return 0;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+};
