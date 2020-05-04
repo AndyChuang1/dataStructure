@@ -25,3 +25,24 @@ var inorderTraversal_Recursive = function (root) {
   inOrder(root);
   return visted;
 };
+
+var inorderTraversal_iteratively = function (root) {
+  const stack = [];
+  const visted = [];
+  let cur = root;
+
+  while (stack.length > 0 || cur) {
+    //把左邊節點都push到stack
+    if (cur) {
+      stack.push(cur);
+      cur = cur.left;
+      //當左邊節點到底了 Pop出來做處理
+      //在做右邊節點
+    } else {
+      cur = stack.pop();
+      visted.push(cur.val);
+      cur = cur.right;
+    }
+  }
+  return visted;
+};
