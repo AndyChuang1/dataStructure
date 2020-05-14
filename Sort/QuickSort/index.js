@@ -1,5 +1,5 @@
 function QucikSort(arr) {
-  const len = arr.length - 1;
+  const len = arr.length;
   const pivot = arr[Math.floor(arr.length / 2)];
   const l = [];
   const r = [];
@@ -18,4 +18,4 @@ function QucikSort(arr) {
   return [...QucikSort(l), pivot, ...QucikSort(r)];
 }
 
-console.log(QucikSort([2, 5, 6, 1, 32, 43, 26, 44]));
+console.log(QucikSort([2, 6, 1]));
