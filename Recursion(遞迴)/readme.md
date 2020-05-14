@@ -18,3 +18,20 @@ factorail(4) //24
 如果 num 等於 1 時，才會回傳結果。
 因此實際上執行的過程會像這樣：
 ![avatar](./steps.gif)
+
+# index3 雙遞迴
+
+```
+function rec(a, b) {
+  if (a == b || b == 0) {
+    return 1;
+  }
+  return rec(a - 1, b) + rec(a - 1, b - 1);
+}
+
+console.log(rec(5, 3));
+
+```
+
+![img](./IMG_0803.jpg)
+[Reference video](https://www.youtube.com/watch?v=B3U6LExgevE&t=689s)
