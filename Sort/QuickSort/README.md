@@ -7,3 +7,5 @@
 將比基準值 (Pivot) 大的數值移到基準值右邊，形成右子串列
 分別對左子串列、右子串列作上述三個步驟
 直到左子串列或右子串列只剩一個數值或沒有數值
+
+[Rederencr](https://ithelp.ithome.com.tw/articles/10219567)
