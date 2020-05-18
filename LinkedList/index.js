@@ -18,7 +18,7 @@ class LinkedList {
 
     this.size++;
   }
-  insert(index, item) {
+  insertAt(index, item) {
     if (index > -1 && index <= this.size) {
       let newNode = new node(item);
       let current = this.head;
@@ -94,7 +94,7 @@ const List = new LinkedList();
 List.append(1);
 List.append(2);
 List.append(3);
-List.insert(1, 6);
+List.insertAt(1, 6);
 List.removeAt(1);
 
 // console.log(List.indexOf(0));
