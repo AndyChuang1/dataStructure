@@ -18,3 +18,8 @@ Output: 8
 
 Note:
 Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?
+
+## Thoughts
+
+1. 把陣列先排齊
+2. 使用迴圈 尋找缺失的數字
