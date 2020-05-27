@@ -16,11 +16,16 @@
 
 ## What’s the difference between .call and .apply
 
-    -  Answer :
+    -  Answer : 最大的差別就是 call 參數是一個一個傳入apply 使用陣列
+
+```
+    fn.call(this,arg1,arg2....)
+    fn.apply(this,[...arg])
+```
 
 ## Explain “hoisting”.
 
-    - Answer :
+    - Answer : JS 在執行前，會把宣告var ,let ,const 與function 提升到最上面，但不賦值
 
 ## What is "use strict";? what are the advantages and disadvantages to using it?
 
@@ -38,4 +43,4 @@
 
 ## What are the differences between variables created using let, var or const?
 
-    - Answer :
+    - Answer : var 為function scope , let & const 為block scope , const 是常數宣告無法再更動
