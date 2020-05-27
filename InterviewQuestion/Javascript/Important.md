@@ -1,6 +1,31 @@
 ## Explain how this works in JavaScript
 
-    - Answer :
+    - Answer : 通常this是指向 代表當前instance本身，但是只要脫離instance或所謂的物件通常會指向window全域
+
+要看 this，就看這個函式『怎麽』被呼叫」，而你要看怎麼被呼叫的話，就轉成 call 的形式就行了。
+
+```
+const obj = {
+  value: 1,
+  hello: function() {
+    console.log(this.value)
+  },
+  inner: {
+    value: 2,
+    hello: function() {
+      console.log(this.value)
+    }
+  }
+}
+
+const obj2 = obj.inner
+const hello = obj.inner.hello
+obj.inner.hello()  === obj.inner.hello.call(obj.inner) //output : 2
+obj2.hello() === obj.inner.hello.call(obj.inner)//output : 2
+hello() === hello.call() // output : undefined
+```
+
+[Reference](https://blog.techbridge.cc/2019/02/23/javascript-this/)
 
 ## Explain how prototypal inheritance works
 
@@ -34,7 +59,7 @@
 Answer :優點是比較嚴謹, 缺點是失去一些 JS 的靈活性
 
 - 不宣告直接賦予變數
-- 刪除已經宣告的錯誤
+- this 脫離物件會是 undefined
 - 物件內有重複屬性
 
 ```
