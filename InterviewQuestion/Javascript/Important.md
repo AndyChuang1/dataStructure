@@ -29,7 +29,20 @@
 
 ## What is "use strict";? what are the advantages and disadvantages to using it?
 
-    - Answer :
+Answer :優點是比較嚴謹, 缺點是失去一些 JS 的靈活性
+
+- 不宣告直接賦予變數
+- 刪除已經宣告的錯誤
+- 物件內有重複屬性
+
+```
+
+'use strict';
+auntie = '漂亮阿姨';
+// Uncaught ReferenceError: auntie is not defined
+
+
+```
 
 ## What is event loop? What is the difference between call stack and task queue??
 
