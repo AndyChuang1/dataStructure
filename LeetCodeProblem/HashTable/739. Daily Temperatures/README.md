@@ -10,3 +10,4 @@ Note: The length of temperatures will be in the range [1, 30000]. Each temperatu
 
 1. 使用 For 與 while 不斷與隔天比較
 2. 如果沒比較到就為 0
+3. Time complexity :Big(n^2)
