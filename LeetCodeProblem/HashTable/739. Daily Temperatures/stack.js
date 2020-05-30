@@ -8,9 +8,11 @@ var dailyTemperatures = function (T) {
   const result = new Array(len).fill(0);
 
   for (let i = T.length - 1; i >= 0; i--) {
+    //與stack中的value相比
     while (stack.length && T[i] >= T[stack[stack.length - 1]]) {
       stack.pop();
     }
+    //
     if (T[i] < T[stack[stack.length - 1]]) {
       const distance = stack[stack.length - 1] - i;
       result[i] = distance;
