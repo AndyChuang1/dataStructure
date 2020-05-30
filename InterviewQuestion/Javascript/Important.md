@@ -33,7 +33,25 @@ hello() === hello.call() // output : undefined
 
 ## What’s the difference between a variable that is: null, undefined or undeclared?
 
-    -  Answer :
+null 代表有宣告但是給予空值
+
+```
+let i = null
+console.log(i)
+```
+
+undefined 代表有宣告 但是沒有賦值
+
+```
+let i;
+console.log(i)
+```
+
+undeclared 代表未宣告
+
+```
+console.log(i)
+```
 
 ## What is a closure, and how/why would you use one?
 
