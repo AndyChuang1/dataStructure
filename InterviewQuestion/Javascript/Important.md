@@ -53,6 +53,45 @@ undeclared 代表未宣告
 console.log(i)
 ```
 
+## What’s the difference between Arrow function and function?
+
+function
+
+- this 會指向運行時的環境
+- 如果找不到運行時環境會找到 window
+- 可以使用 call,apply,bind 綁定 obj
+
+```
+let time = {
+  name: 'Andy',
+  //普通function 因為setTimeout 是cb 把function 帶到window上執行了
+  timeOut() {
+    setTimeout(function () {
+      console.log(this.name); // output: undefined
+    }, 100);
+  },
+};
+```
+
+Arrow function
+
+- this 會指向定義時的環境
+- 沒有 prototype
+- 不行做 construct function, new Function 會拋錯
+- 無法可以使用 call,apply,bind 綁定 obj 環境
+
+```
+let time = {
+  name: 'Andy',
+  //arrow function 會指向在定義時所在的範圍
+  timeOut2() {
+    setTimeout(() => {
+      console.log(this.name); // output : Andy
+    }, 100);
+  },
+};
+```
+
 ## What is a closure, and how/why would you use one?
 
     -  Answer :
