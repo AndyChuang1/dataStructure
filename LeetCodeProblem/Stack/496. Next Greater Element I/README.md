@@ -37,3 +37,7 @@ The length of both nums1 and nums2 would not exceed 1000.
    Time complexity O(mn) 因為第二個迴圈 不是從 n 開始
 
 ## Thoughts -Stack
+
+1. 使用 stack 與 hashmap 解
+2. 使用 stack 找到 nums2[i]右邊一個比較大的數值放進 map 裡
+3. 在使用 nums1 找出數字對應的結果
