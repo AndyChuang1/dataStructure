@@ -3,6 +3,7 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
+//t
 var nextGreaterElement = function (nums1, nums2) {
   let result = [];
   let map = new Map();
