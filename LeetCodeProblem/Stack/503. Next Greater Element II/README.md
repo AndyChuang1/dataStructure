@@ -18,3 +18,9 @@ Note: The length of given array won't exceed 10000.
 
 1. 創造 doubleNums [...nums,...nums] 模擬循環;
 2. 跑雙迴圈 依依比較
+   Time complexity O(n^2) 雙迴圈都要跑完 n
+   Space complexity O(n) result 佔 n 個空間
+
+## Thoughts - Stack
+
+我們可以用一個 stack 來記錄，遇到比 stack.top 小的數字就放入棧中，遇到比 stack.top 大的數字就說明這是 stack.top 數字的下一個更大的數，就將其放在結果數組的對應位置上
