@@ -31,3 +31,4 @@ var nextGreaterElement = function (nums1, nums2) {
 
   // O(M+N)
 };
+nextGreaterElement([4, 1, 2], [1, 3, 4, 2]);
