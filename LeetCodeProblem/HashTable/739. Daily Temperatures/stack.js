@@ -9,6 +9,7 @@ var dailyTemperatures = function (T) {
 
   for (let i = T.length - 1; i >= 0; i--) {
     //與stack中的value相比
+    //當下溫度與上一個溫度相比
     while (stack.length && T[i] >= T[stack[stack.length - 1]]) {
       stack.pop();
     }
