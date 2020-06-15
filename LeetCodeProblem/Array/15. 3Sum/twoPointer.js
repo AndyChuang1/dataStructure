@@ -4,7 +4,7 @@ function threeSum(nums) {
   //lgN
   //[-4,-1,-1,0,1,2]
   nums.sort((a, b) => a - b);
-  //n^2
+  //n
   for (let i = 0; i < len; i++) {
     let l = i + 1;
     let r = nums.length - 1;
