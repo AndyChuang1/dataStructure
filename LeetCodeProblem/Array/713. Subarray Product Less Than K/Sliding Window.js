@@ -14,7 +14,7 @@ var numSubarrayProductLessThanK = function (nums, k) {
 
   while (r < nums.length) {
     product *= nums[r];
-    //如果乘積>=K 表示l要往右移動 乘積除以l 才能把乘積變成
+    //如果乘積>=K 表示l要往右移動
     while (product >= k) {
       product /= nums[l];
       l++;
