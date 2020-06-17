@@ -14,8 +14,9 @@ var numSubarrayProductLessThanK = function (nums, k) {
 
   while (r < nums.length) {
     product *= nums[r];
-    //如果乘積>=K 表示l要往右移動
+    //如果乘積>=K 表示l要往右移動 縮小乘積
     while (product >= k) {
+      //移動一格時要把前一格去除掉
       product /= nums[l];
       l++;
     }
