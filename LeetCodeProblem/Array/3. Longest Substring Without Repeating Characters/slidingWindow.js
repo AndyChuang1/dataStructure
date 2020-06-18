@@ -20,3 +20,6 @@ var lengthOfLongestSubstring = function (s) {
   }
   return longLength;
 };
+
+//Time complexity = O(n)
+//Space complexity = O(n) 因為有用到 set
