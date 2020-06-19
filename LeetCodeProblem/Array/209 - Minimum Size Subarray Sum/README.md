@@ -15,6 +15,6 @@ If you have figured out the O(n) solution, try coding another solution of which 
 
 ## Thoughts - SLiding Window
 
-1. 當 sum <> s R window 一直往右移 擴大範圍
+1. 當 sum < s R window 一直往右移 擴大範圍
 2. 當 sum > s 時 L window 在開始往右移 縮小範圍
 3. 直到走到底 結束
