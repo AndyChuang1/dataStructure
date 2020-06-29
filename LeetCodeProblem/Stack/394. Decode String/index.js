@@ -26,6 +26,7 @@ var decodeString = function (s) {
       times = cur + times;
       cur = stack.pop();
     }
+    //把剛剛整理好的在push回去
     if (cur) {
       stack.push(cur);
     }
@@ -37,5 +38,5 @@ var decodeString = function (s) {
 };
 
 // decodeString('3[a]2[bc]');
-// decodeString('2[abc]3[cd]ef');
-decodeString('10[a]2[bc]');
+decodeString('2[abc]3[cd]ef');
+// decodeString('10[a]2[bc]');
