@@ -30,7 +30,101 @@ hello() === hello.call() // output : undefined
 
 ## Explain how prototypal inheritance works
 
-    - Answer :
+- Answer : JS 是透過 prototype chain 來實現繼承。簡單來說透過**原型**繼承，可以讓本來沒有某個屬性的物件去存取其他物件的屬性
+
+```
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.log = function () {
+  console.log(this.name + ', age:' + this.age);
+}
+
+var nick = new Person('nick', 18);
+var peter = new Person('peter', 20);
+
+console.log(nick.log === peter.log) // true
+
+// 功能依舊跟之前一樣
+nick.log(); // nick, age:18
+peter.log(); // peter, age:20
+```
+
+### 探究原理
+
+不知道你會不會好奇一件事，以上面 var nick = new Person('nick', 18);的例子來說，當我在呼叫 nick.log()的時候，JavaScript 是怎麼找到這個 function 的？
+
+因為 nick 這個 instance 本身並沒有 log 這個 function。但根據 JavaScript 的機制，nick 是 Person 的 instance，所以如果在 nick 本身找不到，它會試著從 Person.prototype 去找。
+
+可是，JavaScript 怎麼知道要到這邊去找？所以一定是 nick 跟 Person.prototype 會透過某種方式連接起來，才知道說要往哪邊去找 log 這個 function。
+
+而這個連接的方式，就是**proto**。
+（附註：其實比較好的方式是用 Object.getPrototypeOf()，但這邊為了方便起見，還是使用比較常見的**proto**，更詳細的說明可參考：MDN: Object.prototype.proto）
+
+```
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.log = function () {
+  console.log(this.name + ', age:' + this.age);
+}
+
+var nick = new Person('nick', 18);
+
+console.log(nick.__proto__ === Person.prototype) // true
+```
+
+而上面這一條透過**proto**不斷串起來的鍊，就叫做原型鍊。透過這一條原型鍊，就可以達成類似繼承的功能，可以呼叫自己 parent 的 method。
+[Reference](https://blog.techbridge.cc/2017/04/22/javascript-prototype/)
+
+前面說的都是「建構式」與「原型」的關係，那麼如果我們要透過「物件」來達到原型繼承的話可以怎麼做？
+
+第一個是透過 Object.setPrototypeOf()。
+
+像這樣，將 cutman 指定為 rockman 的原型物件：
+
+```
+Object.setPrototypeOf(rockman, cutman);
+```
+
+第二種，我們可以透過 Object.create()。
+
+```
+// Person 物件
+var Person = {
+  name: 'Default_Name',
+  sayHello: function(){
+    return "Hi, I'm " + this.name;
+  }
+};
+
+// 透過 Object.create() 將 Person 作為原型物件來建立一個新的物件
+var p = Object.create(Person);
+
+p.sayHello();   // "Hi, I'm Default_Name"
+
+p.name = 'Kuro';
+p.sayHello();   // "Hi, I'm Kuro"
+```
+
+像這樣，我們可以先建立一個物件作為「原型」，然後透過 Object.create() 來產生一個新的物件，此時新物件的 [[prototype]] 就會是我們所指定的那個原型物件。
+
+Object.create() 實作的原理簡單來說就像這樣：
+
+```
+Object.create = function (proto){
+  function F() {}
+  F.prototype = proto;
+  return new F();
+}
+```
+
+當我們把原型物件作為參數傳入 proto， Object.create() 會回傳一個 new F()，也就是透過一個封裝過的建構式建構出來的物件，並把 prototype 指向作為參數的 proto。
+[Reference](https://ithelp.ithome.com.tw/articles/10194356)
 
 ## What’s the difference between a variable that is: null, undefined or undeclared?
 
