@@ -28,8 +28,8 @@ var maxSatisfied = function (customers, grumpy, X) {
       l++;
     }
   }
-
-  console.log(grumpy);
+  console.log(total + secretTime);
+  return total + secretTime;
 };
 maxSatisfied([1, 0, 1, 2, 1, 1, 7, 5], [0, 1, 0, 1, 0, 1, 0, 1], 3);
 
