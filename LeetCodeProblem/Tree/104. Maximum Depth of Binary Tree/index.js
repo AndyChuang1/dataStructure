@@ -29,5 +29,5 @@ var maxDepth = function (root) {
 //Depth-First Search Recursive
 var maxDepthRecursive = function (root) {
   if (!root) return 0;
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+  return Math.max(maxDepthRecursive(root.left), maxDepthRecursive(root.right)) + 1;
 };
