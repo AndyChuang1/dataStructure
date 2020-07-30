@@ -189,7 +189,20 @@ let time = {
 
 ## What is a closure, and how/why would you use one?
 
-    -  Answer :
+    -  Answer : Closure 就是 return 一個function ,打造私有變數
+    我們可以減少side effect 產生機率，可以保存狀態、且不需要用到容易污染的全域變數，也可以讓外部修改到狀態。
+
+    function getMoney (){
+      let total =0;
+      return function add (money){
+        total+=money;
+        console.log(total)
+      }
+    }
+
+    let wallet = getMoney();
+    wallet(1) // 1
+    wallet(5) // 6
 
 ## What’s the difference between .call and .apply
 
