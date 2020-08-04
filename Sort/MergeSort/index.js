@@ -18,9 +18,10 @@ function sortBeforeMerge(leftArr, rightArr) {
     let miniNums = leftArr[0] < rightArr[0] ? leftArr.shift() : rightArr.shift();
     sortArr.push(miniNums);
   }
-  sortArr = leftArr.length > 0 ? sortArr.concat(leftArr) : sortArr.concat(rightArr);
+  // sortArr = leftArr.length > 0 ? sortArr.concat(leftArr) : sortArr.concat(rightArr);
+  sortArr = leftArr.length > 0 ? [...sortArr, ...leftArr] : [...sortArr, ...rightArr];
   console.log('sortArr : ' + sortArr);
   return sortArr;
 }
 
-console.log(mergeSort([3, 1, 5, 4]));
+console.log(mergeSort([4, 3, 2, 1]));
