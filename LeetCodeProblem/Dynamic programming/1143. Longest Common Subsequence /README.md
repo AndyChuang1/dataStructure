@@ -40,7 +40,7 @@ text1 and text2 consist of only lowercase English characters.
 
 Step 1
 
-調表法
+填表法
 dp[] = m\*n 的 array
 
 Step 2
@@ -70,6 +70,8 @@ i == 0&& j!=0
 這情況我們只要跟左邊比
 如果 又遇到重複只能算一次
 
+因為其實以下圖來說 a = a 以填表來說就往斜方驚嘆號移動了
+
 ```
 text1 = 'ac'
 text2 = 'aa'
@@ -78,7 +80,7 @@ text2 = 'aa'
 |     | a   | a   |
 | --- | --- | --- |
 | a   | 1   | 1   |
-| c   |     |     |
+| c   |     | !   |
 
 i != 0 && j == 0
 
@@ -111,8 +113,6 @@ text2 = 'acc'
 那就是 DP[i-1][j -1] + 1
 
 不同 就是 max(DP[i-1][j] , DP[i][j-1])
-
-為什麼
 
 ```
 text1 = 'abc'
