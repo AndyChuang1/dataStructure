@@ -14,7 +14,7 @@ Note: There will be no obstacles on points 0 and n.
 
 Example 1:
 
-[ex1]: (./ic234-q3-ex1.png)
+![ex1](./ic234-q3-ex1.png)
 
 ```
 Input: obstacles = [0,1,2,3,0]
@@ -25,7 +25,7 @@ Note that the frog can jump over obstacles only when making side jumps (as shown
 
 Example 2:
 
-[ex2]: (./ic234-q3-ex2.png)
+![ex2](./ic234-q3-ex2.png)
 
 ```
 Input: obstacles = [0,1,1,3,3,0]
@@ -34,7 +34,7 @@ Explanation: There are no obstacles on lane 2. No side jumps are required.
 ```
 
 Example 3:
-[ex3]: (./ic234-q3-ex3.png)
+![ex3](./ic234-q3-ex3.png)
 
 ```
 Input: obstacles = [0,2,1,0,3,0]
