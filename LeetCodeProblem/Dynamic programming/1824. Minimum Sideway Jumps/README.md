@@ -41,3 +41,25 @@ Input: obstacles = [0,2,1,0,3,0]
 Output: 2
 Explanation: The optimal solution is shown by the arrows above. There are 2 side jumps.
 ```
+
+## Thoughts
+
+step 1:
+
+每一跳 記下每條路最少 的 side jump
+最後 return 最小的 side jump
+
+step 2:
+
+思考 obstacles 並更新每條路的 最小 side jump
+
+step3 :
+我們看 每個前面的 obstacles[i-1]
+如果 obstacles[i-1] =1 代表 r1 我們無法從這一條路移動，把這條設成 ifinity, r2 = min(r2,r3+1), r3 = min(r3,r2+1),以次類推
+
+[0,1,2,3,0]
+| 0 | 1 | 2 |3 |0 |
+|---|---|---|---|---|
+| 1 |IFI| 1 |2 | 2|
+| 0 | 0 |IFI|2 | 2|
+| 1 | 1 | 1 |IFI|3 |
