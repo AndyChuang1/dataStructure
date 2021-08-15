@@ -54,8 +54,11 @@ step 2:
 思考 obstacles 並更新每條路的 最小 side jump
 
 step3 :
-我們看 每個前面的 obstacles[i-1]
-如果 obstacles[i-1] =1 代表 r1 我們無法從這一條路移動，把這條設成 ifinity, r2 = min(r2,r3+1), r3 = min(r3,r2+1),以次類推
+我們看 當前的 obstacles[i]
+如果 obstacles[i] =1 代表 r1 我們無法從這一條路移動，把這條設成 ifinity, r2 = min(r2,r3+1), r3 = min(r3,r2+1),以次類推,
+
+如果 obstacles[i] ＝ 0 就更新 r1,r2,r3,
+r1 = min(r1,r2+1,r3+1)
 
 [0,1,2,3,0]
 | 0 | 1 | 2 |3 |0 |
