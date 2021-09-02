@@ -54,7 +54,7 @@ For Example 1:
 Input: num = "132", change = [9,8,5,0,3,6,4,2,6,8]
 ```
 
-No flag = Is not Mutating Substring,
+Is not Mutating Substring without flag.
 832
 832
 835
@@ -69,4 +69,4 @@ break
 
 2. `const curNum = strArr[i] - 0 `can convert to integer.
 
-3.
+3. str.replace().Only the first occurrence will be replaced
