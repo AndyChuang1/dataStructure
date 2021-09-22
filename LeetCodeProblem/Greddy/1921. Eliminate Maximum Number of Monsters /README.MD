@@ -49,3 +49,16 @@ Constraints:
 `n == dist.length == speed.length`
 `1 <= n <= 105`
 `1 <= dist[i], speed[i] <= 105`
+
+## Thoughts
+
+1. dist - speed <= 0 monster reaches your city.
+2. Calculate time and sort by DESC, we need to kill monster which reaches city first.
+3. for loop to get monster current dist `curDist = dist[i]-speed[i] *i`;
+4. avoid first condition, we can eliminate first monster no matter what.
+
+```
+dist = [4,3,4]
+speed = [1,1,2]
+time[4,3,2]
+```
