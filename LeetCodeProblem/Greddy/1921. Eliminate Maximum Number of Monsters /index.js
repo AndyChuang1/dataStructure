@@ -28,3 +28,25 @@ var eliminateMaximum = function (dist, speed) {
 // eliminateMaximum([1, 1, 2, 3], [1, 1, 1, 1]);
 
 eliminateMaximum([4, 8, 6, 8, 2, 7, 4], [1, 3, 3, 1, 10, 1, 1]);
+
+var eliminateMaximum2 = function (dist, speed) {
+  let killCount = 0;
+
+  const timeArr = [];
+
+  for (let i = 0; i < dist.length; i++) {
+    const time = dist[i] / speed[i];
+    timeArr.push(time);
+  }
+
+  timeArr.sort((a, b) => {
+    return a - b;
+  });
+
+  for (let i = 0; i < dist.length; ++i) {
+    const curE = timeArr[i] - i;
+    if (curE <= 0) break;
+    killCount++;
+  }
+  return killCount;
+};
